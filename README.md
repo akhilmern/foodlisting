@@ -2,8 +2,7 @@
 
 Please find the snapshot of the react application below.
 
-![image](https://user-images.githubusercontent.com/46927802/172161123-ca841884-dbd6-4de7-912b-b5a587b97ae3.png)
-
+![image](https://user-images.githubusercontent.com/46927802/172170392-764c2b1a-906f-4e9a-831e-0a2b7bc3256e.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
