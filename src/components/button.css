@@ -1,0 +1,40 @@
+.button {
+    background-color: whitesmoke;
+    color: #000;
+    padding: 10px;
+    outline: none;
+    border-style: none;
+    cursor: pointer;
+    transform: scale(1, 1);
+    transition: all 0.5s ease;
+    /* border-radius: 10px; */
+    border-left: 1px solid #ffc700;
+    border-right: 1px solid #ffc700;
+
+}
+
+.first button{
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border-left: 0px;
+}
+
+.last{
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-right: 0px;
+
+}
+
+
+.button:hover {
+    background-color: #ffc700;
+}
+
+.button:active {
+    background-color: #ffc700;
+}
+
+.button.active {
+    background-color: #ffc700;
+}

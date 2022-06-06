@@ -1,0 +1,52 @@
+.App {
+    /* text-align: center; */
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+}
+
+.category-container{
+    padding: 20px;
+}
+
+.items-container{
+    margin-top: 20px;
+    margin-left: 13px;
+   /* margin-right: 35px; */
+
+}
+
+.category-container input{
+    width: 30%;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid whitesmoke    ;
+    padding: 10px;
+    margin-bottom: 40px;
+    padding-left: 45px;
+}
+
+.category-container div{
+    border: 1.5px solid #ffc700;
+    width: max-content;
+    border-radius: 10px;
+}
+
+.searchbar svg{
+    position: absolute;
+    top:33px;
+    left: 35px;
+}
+
+.show-more{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.show-more button{
+    display: flex;
+    margin: 0px auto;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    border: 1px solid #ffc700;
+}

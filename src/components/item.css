@@ -1,0 +1,86 @@
+@keyframes enter {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.item {
+    display: inline-block;
+    width: 31%;
+    min-width: 200px;
+    border-width: 1px;
+    border-radius: 10px;
+    margin: 1%;
+    /* box-shadow: 2px 2px 20px 1px grey; */
+    animation-duration: 1s;
+    animation-name: enter;
+    background-color: #fff;
+}
+
+.item img{
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 200px
+}
+
+.item h4,p{
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+  
+}
+
+.item span{
+    float: left;
+    width: auto;
+    padding-left: 20px;
+}
+
+.item span p{
+    background-color: #f7f8fa;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    color: #6b6567;
+}
+
+.item-name{
+    width: 100%!important;
+    padding-top: 10px;
+    color: #6b6567;
+    font-weight: bold;
+}
+
+.icon {
+    position: absolute;
+    border-bottom-right-radius: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.green{
+    background: #00b1ff;
+}
+
+
+.blue{
+    background: #8f64ff;
+}
+
+.pink{
+    background: #ff696f;
+}
+
+
+.icon svg, .icon div{
+    padding-right: 15px;
+    color: #fff;
+}
+
+/* .img.loading {
+    background: transparent url(favicon.ico) no-repeat scroll center center;
+} */
