@@ -62,7 +62,6 @@ class App extends Component {
 
   allButtonClasses() {
     const { currentCat } = this.state;
-    console.log()
     return currentCat.id === 0 ? 'button active' : 'button';
   }
 
