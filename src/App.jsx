@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React, { Component } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import inventory from './__mocks__/foods.json';
@@ -11,17 +12,21 @@ import './App.css';
 
 class App extends Component {
   state = {
-    currentCat: { id: null, name: 'All' },
+    currentCat: { id: 0, name: 'All' },
     productsData: [],
     filteredProducts: [],
-    // eslint-disable-next-line react/no-unused-state
-    showMore: false,
   };
 
-  // eslint-disable-next-line react/sort-comp
-  getInventory(currentCategory) {
+  componentDidMount() {
+    const products = this.getInventory();
+    this.setState({ productsData: products });
+  }
+
+  getInventory(newCategory) {
     const { currentCat, filteredProducts } = this.state;
-    const cat = currentCategory || currentCat;
+    const cat = newCategory || currentCat;
+
+    // iltering according to category
     const products = inventory.filter((item) => {
       let selected = false;
       if (cat.name === 'All') {
@@ -31,17 +36,13 @@ class App extends Component {
       }
       return selected;
     });
-    const items = products.slice(0, filteredProducts.length + 9);
+
+    // Adding products for "Show More" button functionality
+    const items = newCategory ? products.slice(0, 9) : products.slice(0, filteredProducts.length + 9);
     this.setState({ filteredProducts: items });
     return products;
   }
 
-  componentDidMount() {
-    const products = this.getInventory();
-    this.setState({ productsData: products });
-  }
-
-  // eslint-disable-next-line react/sort-comp
   getCategories() {
     return categories.map(cat => (
       <span key={cat.id}>
@@ -54,7 +55,29 @@ class App extends Component {
     ));
   }
 
-  // eslint-disable-next-line react/sort-comp
+  handleShowMore = () => {
+    this.getInventory();
+  }
+
+
+  allButtonClasses() {
+    const { currentCat } = this.state;
+    console.log()
+    return currentCat.id === 0 ? 'button active' : 'button';
+  }
+
+  changeCategory(cat) {
+    const updatedCat = { id: cat.id, name: cat.name };
+    this.setState({ currentCat: updatedCat });
+    this.getInventory(updatedCat);
+  }
+
+  search(value) {
+    const { productsData } = this.state;
+    const filtered = productsData.filter(item => item.name.toLowerCase().includes(value.toLowerCase()));
+    this.setState({ filteredProducts: filtered });
+  }
+
   buttonClasses(cat) {
     let classes = 'button';
     const { currentCat } = this.state;
@@ -66,32 +89,6 @@ class App extends Component {
     }
 
     return classes;
-  }
-
-  allButtonClasses() {
-    const { currentCat } = this.state;
-    return currentCat.length === 0 ? 'button active' : 'button';
-  }
-
-  changeCategory(cat) {
-    const updatedCat = { id: cat.id, name: cat.name };
-    // eslint-disable-next-line react/no-unused-state
-    this.setState({ showMore: false });
-    this.setState({ currentCat: updatedCat });
-    this.getInventory(updatedCat);
-  }
-
-  search(value) {
-    const { productsData } = this.state;
-    const filtered = productsData.filter(item => item.name.toLowerCase().includes(value.toLowerCase()));
-    this.setState({ filteredProducts: filtered });
-  }
-
-
-  handleShowMore = () => {
-    // eslint-disable-next-line react/no-unused-state
-    this.setState({ showMore: true });
-    this.getInventory();
   }
 
   render() {

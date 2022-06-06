@@ -8,13 +8,14 @@ function Rating(props) {
   return (
     <p>
       <AiFillStar />
+      {' '}
       {value.toFixed(1)}
     </p>
   );
 }
 
 Rating.propTypes = {
-  value: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
 };
 
 export default Rating;

@@ -50,10 +50,10 @@ function Item(props) {
 
 Item.propTypes = {
   name: PropTypes.string.isRequired,
-  rating: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
   img: PropTypes.string.isRequired,
   time: PropTypes.arrayOf(PropTypes.number).isRequired,
-  isNew: PropTypes.string.isRequired,
+  isNew: PropTypes.bool.isRequired,
   promotion: PropTypes.string.isRequired,
 };
 
